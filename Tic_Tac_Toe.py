@@ -80,6 +80,9 @@ while not end_of_game:
         print("For example \"a1\" or \"c2\".")
         p_one_input = input(f"Make your move again {p_one}: ")
     p_one_move = input_to_index(p_one_input)
+    while board[p_one_move[0]][p_one_move[1]] != " ":
+        p_one_input = input(f"Position is blocked! Make your move again {p_one}: ")
+        p_one_move = input_to_index(p_one_input)
     board[p_one_move[0]][p_one_move[1]] = board[p_one_move[0]][p_one_move[1]].replace(" ", "X")
     print_board()
     if victory_check("X"):
@@ -99,6 +102,9 @@ while not end_of_game:
         print("For example \"a1\" or \"c2\".")
         p_two_input = input(f"Make your move again {p_two}: ")
     p_two_move = input_to_index(p_two_input)
+    while board[p_two_move[0]][p_two_move[1]] != " ":
+        p_two_input = input(f"Position is blocked! Make your move again {p_two}: ")
+        p_two_move = input_to_index(p_two_input)
     board[p_two_move[0]][p_two_move[1]] = board[p_two_move[0]][p_two_move[1]].replace(" ", "O")
     print_board()
     if victory_check("O"):
