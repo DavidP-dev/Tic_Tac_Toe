@@ -61,7 +61,7 @@ def victory_check(stone):
         return True
 
 
-# Tie check
+# Tie check function
 def tie_check():
     if tie_count == 9 and not end_of_game:
         return True
